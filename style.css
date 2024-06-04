@@ -1,0 +1,144 @@
+/* General Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: right;
+}
+
+
+#background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+/* Style the side navigation */
+.sidenav {
+  height: 99%;
+  width: 77px;
+  position: fixed;
+  z-index: 1;
+  top: 11px;
+  left: 0;
+  background-color: rgba(255, 145, 242, 0.88);
+  overflow-x: hidden;
+}
+
+/* Side navigation links */
+.sidenav a {
+  color: rgba(0, 255, 20, 0.8);
+  padding: 16px;
+  font-weight: 900;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color on hover */
+.sidenav a:hover {
+  background-color: rgba(224, 188, 213, 0.99);
+  color: #ffff00;
+}
+
+/* Style the content */
+.content {
+  color: hotpink;
+  width: 58%;
+  position: relative;
+  left: 88px;
+  background-color: rgba(7, 7, 7, 0.22);
+  padding-right: 16px;
+  padding-left: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Adjust the layout for smaller screens */
+@media screen and (max-width: 768px) {
+  .content {
+    width: 77%;
+    position: relative;
+    left: 80px;
+    top: 222px;
+    padding: 16px; /* Adjust padding as needed */
+  }
+}
+
+.content.unhovered {
+  background-color: rgba(7, 7, 7, 0.22);
+}
+
+.content.hovered {
+  background-color: rgba(0, 0, 0, .88);
+  color: hotpink;
+}
+
+#muteButton {
+  position: relative;
+  top: 10px;
+  right: 10px;
+  background-color: hotpink;
+  border: 4px groove #ffffff;
+  color: #000000;
+  padding: 11px 11px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#muteButton:hover {
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, .88);
+}
+
+#muteButton:active {
+  transform: scale(0.95);
+}
+
+.button {
+  background-color: hotpink;
+  border: 4px groove #ffffff;
+  color: #000000;
+  padding: 11px 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, .88);
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+/* Responsive Background Video */
+@media screen and (max-width: 768px) {
+  #background-video {
+    width: 100%; /* Allow video to exceed container width on smaller screens */
+    height: auto; /* Set video height to 100% of its container */
+  }
+}
+
+
