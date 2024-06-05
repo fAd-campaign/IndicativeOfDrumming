@@ -142,7 +142,7 @@ body {
 }
 
 /* Responsive Background Video */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1111px) {
   #background-video {
     width: 100%; /* Allow video to exceed container width on smaller screens */
     height: auto; /* Set video height to 100% of its container */

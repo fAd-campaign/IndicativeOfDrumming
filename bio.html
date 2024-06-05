@@ -48,9 +48,31 @@ My primary media are live performance and digital recordings which I present to 
 I am a dedicated supporter of DIY culture and grassroots collaboration. My work centers on creating and sharing music that prioritizes community and self-sufficiency, challenging the norms of mass production and commercialization. It's my goal to dismantle societal hierarchies and promote egalitarian, collective creativity. My artistic vision is rooted in the principles of mutual aid, innovation, and the empowerment of self-actualized artists and  communities. If you'd like to see a list of my accomplishments, please check out my <a href="assets/epk2024copy/Nz%20Art%20Resume%202024.pdf" target="_blank" class="custom-link">resume.</a>
   </p>
   
-
-
 </div>
+  
+<script>
+  function adjustContentPosition() {
+    const video = document.getElementById('background-video');
+    const content = document.querySelector('.content');
+    const sidenav = document.querySelector('.sidenav');
+
+    if (video && content && sidenav) {
+      if (window.innerWidth <= 1024) {
+        const videoHeight = video.clientHeight;
+        const sidenavWidth = sidenav.clientWidth;
+        content.style.position = 'absolute';
+        content.style.top = `${videoHeight + 16}px`;
+        content.style.left = `${sidenavWidth + 7}px`;
+        content.style.right = '7px';
+      } else {
+        content.style.position = 'relative';
+        content.style.top = 'auto';
+        content.style.left = '88px'; // reset to original value
+      }
+    }
+  }
+</script>
+  
 <script src="main.js"></script>
 
 </body>

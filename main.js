@@ -41,15 +41,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// main.js
 
+// Listen for window resize event
+window.addEventListener('resize', function() {
+  adjustContentPosition();
+});
+
+// Function to adjust content position
 function adjustContentPosition() {
   const video = document.getElementById('background-video');
   const content = document.querySelector('.content');
   const sidenav = document.querySelector('.sidenav');
 
   if (video && content && sidenav) {
-    if (window.innerWidth <= 1024) {
+    if (window.innerWidth <= 1111) {
       const videoHeight = video.clientHeight;
       const sidenavWidth = sidenav.clientWidth;
       content.style.position = 'absolute';
@@ -64,7 +69,7 @@ function adjustContentPosition() {
   }
 }
 
-// Run on load and on resize
-window.addEventListener('load', adjustContentPosition);
-window.addEventListener('resize', adjustContentPosition);
+// Call adjustContentPosition function on initial page load
+adjustContentPosition();
+
 
