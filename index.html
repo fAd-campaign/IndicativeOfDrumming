@@ -10,8 +10,11 @@
 </head>
 <body class="background-video">
   
-<video id="background-video" autoplay muted loop poster="assets/9.1poster.png">
-  <source src="assets/9.1-compressed.mp4" type="video/mp4">
+<video id="background-video" autoplay muted loop poster="iodLandingPoster.jpg">
+  <!-- Desktop video source -->
+  <source src="assets/9.1-compressed.mp4" type="video/mp4" id="desktop-video-source">
+  <!-- Mobile video source -->
+  <source src="assets/shorty1.mp4" type="video/mp4" id="mobile-video-source">
 </video>
 
   <button id="muteButton" onclick="toggleMute()">Unmute</button>
@@ -62,6 +65,28 @@
       }
     }
   }
+
+  function loadBackgroundVideo() {
+    const video = document.getElementById('background-video');
+    const desktopSource = document.getElementById('desktop-video-source');
+    const mobileSource = document.getElementById('mobile-video-source');
+
+    if (video) {
+      if (window.innerWidth <= 768) {
+        video.src = mobileSource.src;
+      } else {
+        video.src = desktopSource.src;
+      }
+
+      video.load(); // Reload the video source
+    }
+  }
+
+  // Call the function to load the appropriate video on page load
+  loadBackgroundVideo();
+
+  // Recheck and reload the video on window resize
+  window.addEventListener('resize', loadBackgroundVideo);
 </script>
 
 <script src="main.js"></script>
