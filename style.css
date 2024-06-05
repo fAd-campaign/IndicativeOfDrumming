@@ -6,8 +6,8 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   text-align: right;
+  background-color: #ffd2ef; /* Change this to the desired background color */
 }
-
 
 #background-video {
   width: 100vw;
@@ -68,7 +68,6 @@ body {
     width: 77%;
     position: relative;
     left: 80px;
-    top: 222px;
     padding: 16px; /* Adjust padding as needed */
   }
 }
@@ -140,5 +139,3 @@ body {
     height: auto; /* Set video height to 100% of its container */
   }
 }
-
-

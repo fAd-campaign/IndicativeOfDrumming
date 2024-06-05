@@ -40,3 +40,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }, { once: true });
     }
 });
+
+// main.js
+
+function adjustContentPosition() {
+  const video = document.getElementById('background-video');
+  const content = document.querySelector('.content');
+  const sidenav = document.querySelector('.sidenav');
+
+  if (video && content && sidenav) {
+    if (window.innerWidth <= 768) {
+      const videoHeight = video.clientHeight;
+      const sidenavWidth = sidenav.clientWidth;
+      content.style.position = 'absolute';
+      content.style.top = `${videoHeight + 16}px`;
+      content.style.left = `${sidenavWidth + 7}px`;
+      content.style.right = '7px';
+    } else {
+      content.style.position = 'relative';
+      content.style.top = 'auto';
+      content.style.left = '88px'; // reset to original value
+    }
+  }
+}
+
+// Run on load and on resize
+window.addEventListener('load', adjustContentPosition);
+window.addEventListener('resize', adjustContentPosition);
+
