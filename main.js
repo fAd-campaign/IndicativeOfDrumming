@@ -54,7 +54,7 @@ function adjustContentPosition() {
   const sidenav = document.querySelector('.sidenav');
 
   if (video && content && sidenav) {
-    if (window.innerWidth <= 1111) {
+    if (window.innerWidth <= 768) {
       const videoHeight = video.clientHeight;
       const sidenavWidth = sidenav.clientWidth;
       content.style.position = 'absolute';
