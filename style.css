@@ -23,7 +23,10 @@ body {
 
 /* Style the side navigation */
 .sidenav {
-  height: 99%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Adjust space between items */
+  height: calc(100vh - 22px); /* Adjust height based on the top position */
   width: 77px;
   position: fixed;
   z-index: 1;
@@ -31,6 +34,7 @@ body {
   left: 0;
   background-color: rgba(255, 145, 242, 0.88);
   overflow-x: hidden;
+  overflow-y: auto; /* Allow vertical scrolling if needed */
 }
 
 /* Side navigation links */
@@ -40,6 +44,11 @@ body {
   font-weight: 900;
   text-decoration: none;
   display: block;
+}
+
+/* Add padding to the last element in the sidenav */
+.sidenav a:last-child {
+  margin-bottom: 20px; /* Adjust the value as needed */
 }
 
 /* Change color on hover */
@@ -65,7 +74,7 @@ body {
 /* Adjust the layout for smaller screens */
 @media screen and (max-width: 768px) {
   .content {
-    width: 77%;
+    width: calc(100% - 96px); /* Adjust width based on sidenav */
     position: relative;
     left: 80px;
     padding: 16px; /* Adjust padding as needed */
@@ -133,7 +142,7 @@ body {
 }
 
 /* Responsive Background Video */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   #background-video {
     width: 100%; /* Allow video to exceed container width on smaller screens */
     height: auto; /* Set video height to 100% of its container */
